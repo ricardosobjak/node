@@ -1,0 +1,22 @@
+{
+  "name": "express-starter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/server.js",
+    "start": "node src/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-json-validator-middleware": "^2.0.0",
+    "mongodb": "^3.3.2",
+    "mongoose": "^5.7.4",
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.3"
+  }
+}

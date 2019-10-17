@@ -1,0 +1,55 @@
+# Iniciar o projeto
+npm init -y
+
+# Abrir o VS Code
+code .
+
+
+# Instalar o Express
+npm install express
+
+# Criar a pasta de sources
+mkdir src
+
+
+# Criar o arquivo src/server.js
+
+const express = require('express');
+const app = express();
+
+app.get('/', (req, res) => {
+     //res.send("Hello World");
+    res.send({message: "Hello World"});
+});
+
+app.listen(3000);
+# ----------------------------
+
+
+
+
+# Instalar o nodemon (compilar e publicar automaticamente o código)
+npm install nodemon -d
+
+
+
+# Criar métodos para atender por GET, POST, PUT, ...
+
+// Habilitar o plugin para tratar o conteúdo do body como JSON
+app.use(express.json())
+
+// res.body = Obter o conteúdo passado no corpo da requisição
+app.post('/users', (req, res) => {
+    return res.json(req.body)
+});
+
+// req.params = Acessar route params (edição, delete)
+app.put('/users/:id', (req, res) => {
+    res.json({ id: req.params.id })
+});
+
+// req.query: Obter dados a partir do query params (utilizado para filtros)
+app.get('/', (req, res) => {
+    //res.send("Hello World");
+    res.send({ message: req.query.message });
+});
